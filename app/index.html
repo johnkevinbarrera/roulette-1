@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="./rabbit.ico" />
+  <title>BRglitW</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'> -->
+  <script src="./app.js"></script>
+</head>
+<body >
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Help <span class="sr-only">(current)</span></a>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+
+    <br>
+        <div id="alertp" class="alert alert-warning" role="alert">
+              <strong>Warning!</strong> Remember that you need to install metamask in the network used: main, ropstes ,rinkeby ,local or others, to be able to play!
+        </div>
+    <main role="main" class="container" >
+
+      <center><h1  class="display-5"><strong>Black Rabbits Get Lost In The Woods</strong></h1></center>
+      <br>
+
+          <div class="jumbotron">
+
+                    <div class="col-sm-12 mx-auto">
+                      <p>Enable your <a href="https://metamask.io/">Metamask</a> account and start playing, We wish you good luck.</p>
+
+                      <strong>
+                        <p>
+                          Number of tickets: <span id="players" >NaN</span>
+                          <br>
+                          Price per ticket: <span id="price" >NaN</span>
+                          <br>
+                          Tickets available: <span id="tickets" >NaN</span>
+                        </p>
+                    </strong>
+
+                      <h1 class="display-5"><strong><span id="sta" >Playing...</strong></h1>
+                      <h1 class="display-5"><strong><span id="disp" >NaN</span></strong></h1>
+                      <img id="loader" src="./loading.gif">
+                      <br>
+
+                      <form class="form-signin">
+                        <h1 id ="nicktag" class="h3 mb-3 font-weight-normal">Nick Name:</h1>
+                        <input id="nick" class="form-control" placeholder="e.g., Radamantis" required="" autofocus="">
+                        <br>
+                        <button id="send" class="btn btn-lg  btn-block btn-dark" type="submit" onclick="App.play()">Play</button>
+                        <center><p id="status" class="mt-5 mb-3 text-muted">-The game isn't enable here-</p></center>
+                      </form>
+                    </div>
+          </div>
+
+          <center><p class="mt-5 mb-3 text-muted">  </p></center>
+          <br><br>
+
+
+
+    </main>
+
+
+
+
+
+
+
+
+
+  <!--  <span class="hint"><strong>Hint:</strong> open the browser developer console to view any errors and warnings.</span>  -->
+</body>
+</html>
