@@ -53,17 +53,18 @@ Existen muchas maneras de poner tu `Smart-Contracts` sobre alguna de las redes d
 - Instala el SO en VMWare, no olvides tu usuario y contraseña que el sistemas lo solicitara para las instalaciones.
 - Inicializa la terminal y actualiza las dependencias de ubuntu con los siguientes comandos:
   ```git
-    sudo apt-get upgrade
-    sudo apt-get update
+    $ sudo apt-get upgrade
+    $ sudo apt-get update
   ```
 - Instala node versión 8 o superior.
   ```git
-    curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-    sudo apt-get install -y nodejs
+    $ sudo apt-get install curl
+    $ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+    $ sudo apt-get install -y nodejs
   ```
 - Instala truffle
   ```git
-    sudo npm install -g truffle
+    $ sudo npm install -g truffle
   ```
 - En tu navegador instalar [MetaMask][Metamask] (para poder ejecutar los Smart Contracts)
   ![Match function](https://user-images.githubusercontent.com/7105645/46318508-5f586a00-c59c-11e8-8889-4e2a71f16cd4.PNG)
@@ -76,20 +77,20 @@ Existen muchas maneras de poner tu `Smart-Contracts` sobre alguna de las redes d
 
     En la máquina virtual usaremos `ganache-cli`, para ellos instalaremos el programa.
     ```git
-      sudo npm install -g ganache-cli
+      $ sudo npm install -g ganache-cli
     ```
   - **Forma 2:**
 
     En esta forma preferimos que descargue sobre tu máquina real (no la virtual), ya que descarga la blockchain de ethereum, en este ejemplo Ropsten.
     ```git
-      sudo apt-get install software-properties-common
-      sudo add-apt-repository -y ppa:ethereum/ethereum
-      sudo apt-get update
-      sudo apt-get install ethereum
+      $ sudo apt-get install software-properties-common
+      $ sudo add-apt-repository -y ppa:ethereum/ethereum
+      $ sudo apt-get update
+      $ sudo apt-get install ethereum
     ```
     Creación de una cuenta nuevas:
     ```git
-      geth account new
+      $ geth account new
     ```
     > **Nota**: Su nueva cuenta está bloqueada con una contraseña. Por lo que necesitas ingresar una contraseña.
     ```git
@@ -100,22 +101,22 @@ Existen muchas maneras de poner tu `Smart-Contracts` sobre alguna de las redes d
     ```
     Iniciamos geth en la red Ropsten.
     ```git
-      geth --testnet --syncmode "light" --rpc --rpcapi db,eth,net,web3,personal --cache=1024
+      $ geth --testnet --syncmode "light" --rpc --rpcapi db,eth,net,web3,personal --cache=1024
     ```
     Accedemos al nodo una vez que este se haya sincronizado y descargado todos los datos.
     ```git
-      geth attach http://127.0.0.1:8545
+      $ geth attach http://127.0.0.1:8545
     ```
     Concedemos permisos para truffle puede acceder a nuestra cuenta (realizamos esto cada vez que quieras desplegar un Smart Contract)
     ```git
-      personal.unlockAccount(eth.accounts[0])
+      $ personal.unlockAccount(eth.accounts[0])
     ```
 
 ### Instalación del Proyecto
 
 - Descargamos nuestro proyecto de github, recuerda que si modificaste el contrato necesitas correrlo de nuevo y comprobar que la versión del smart contract en solidity esté vigente (este es un problema, Solidity aún está en desarrollo y va cambiando constantemente).
   ```git
-    git clone https://github.com/esc000658/roulette.git
+    $ git clone https://github.com/esc000658/roulette.git
   ```
   > **Nota**: Nuestro proyecto incluye una interfaz gráfica amigable, y fue desarrollada usan webpack y truffle.
 
@@ -124,29 +125,29 @@ Existen muchas maneras de poner tu `Smart-Contracts` sobre alguna de las redes d
 
   - Iniciamos `ganache-cli`, este nos mostrara 10 claves privada con 100 ethers, podemos copiar algunas de ellas para poder probar luego.
   ```git
-    ganache-cli
+    $ ganache-cli
   ```
   - En nuestro navegador abrimos metamask y seleccionamos localhost; luego importamos las clave privadas de las cuentas que añadiremos.
   - Accedemos por consola a la dirección de nuestro proyecto y ejecutamos estos comando, para compilar desplegar el Smart Contract.
     - Solo si Actualizaste o modificaste la versión del Smart Contract:
     ```git
-      truffle compile
+      $ truffle compile
     ```
     - Si estás usando ganache-clie:
     ```git
-      truffle migrate --network local --reset
+      $ truffle migrate --network local --reset
     ```
     - Si Usamos geth podemos desplegar con este comando:
     ```git
-      truffle migrate --network rospten --reset
+      $ truffle migrate --network rospten --reset
     ```
   - Accedemos por consola a la dirección de nuestro proyecto y ejecutamos estos comando, para compilar desplegar el Smart Contract.
   ```git
-    npm run dev
+    $ npm run dev
   ```
   Y si estas en un servidor web:
   ```git
-    npm run build
+    $ npm run build
   ```
 ## Listo, ahora ya podemos jugar!
 
